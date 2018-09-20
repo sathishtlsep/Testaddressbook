@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class TestAddressBook {
 
-		//Added Comment -- Archismita
 		WebDriver driver;
 		
 		@BeforeClass
