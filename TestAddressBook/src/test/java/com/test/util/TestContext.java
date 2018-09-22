@@ -6,28 +6,41 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TestContext {
-
 	
 	public static void main(String[] args) {
 		
-		
-		Properties prop =new Properties();
-		
+		System.out.println(TestContext.getInstance().getUserName());
+	}
+
+	Properties prop = new Properties();
+
+	private TestContext() {
+
 		try {
-			FileInputStream file =new FileInputStream("src\\test\\resources\\testaddress.properties");
-			
+			FileInputStream file = new FileInputStream("src\\test\\resources\\testaddress.properties");
 			prop.load(file);
-			
-			System.out.println(prop.getProperty("YserName", "TestDefault"));
-			System.out.println("password");
-			
-			
+			file.close();
+
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+
+	static TestContext testContext = new TestContext();
+
+	public static TestContext getInstance() {
+
+		return testContext;
+	}
+
+	public String getUserName() {
+		return prop.getProperty("userName");
+	}
+	
+	public String getPassword() {
+		return prop.getProperty("password");
+	}
+
 }
