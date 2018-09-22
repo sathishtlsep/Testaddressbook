@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.test.util.TestContext;
+
 public class AddAddressBook {
 	
 	public WebDriver driver;
@@ -26,11 +28,11 @@ public class AddAddressBook {
 		
 		driver.findElement(By.id("session_email")).click();
 				
-		driver.findElement(By.id("session_email")).sendKeys("ravan@gmail.com");
+		driver.findElement(By.id("session_email")).sendKeys(TestContext.getInstance().getUserName());
 		
 		driver.findElement(By.id("session_password")).click();
 		
-		driver.findElement(By.id("session_password")).sendKeys("Test1");
+		driver.findElement(By.id("session_password")).sendKeys(TestContext.getInstance().getPassword());
 		
 		/* Click on Sign in button */				
 		driver.findElement(By.name("commit")).click();
