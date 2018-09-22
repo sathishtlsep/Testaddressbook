@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.test.util.ExcelContext;
 import com.test.util.TestContext;
 
 public class AddAddressBook {
@@ -44,11 +45,11 @@ public class AddAddressBook {
 		driver.findElement(By.xpath("/html/body/div/a")).click();
 		
 		/* Enter Address details */
-		driver.findElement(By.name("address[first_name]")).sendKeys("ravan");
+		driver.findElement(By.name("address[first_name]")).sendKeys(ExcelContext.getInstance().getAddress().getFirtName());
 		
-		driver.findElement(By.name("address[last_name]")).sendKeys("ravan");
+		driver.findElement(By.name("address[last_name]")).sendKeys(ExcelContext.getInstance().getAddress().getLastName());
 		
-		driver.findElement(By.id("address_street_address")).sendKeys("123 street");
+		driver.findElement(By.id("address_street_address")).sendKeys(ExcelContext.getInstance().getAddress().getAddress());
 		
 		driver.findElement(By.id("address_secondary_address")).sendKeys("apt#123");
 		
