@@ -1,4 +1,4 @@
-package TestAddressbook_TC.TestAddressbook_TC;
+package TestAddressbook_TC;
 
 
 import org.openqa.selenium.By;
