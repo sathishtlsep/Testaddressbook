@@ -1,2 +1,0 @@
-userName=ravan@gmail.com
-password=Test1
