@@ -19,6 +19,7 @@ public class TestContext {
 			prop.load(file);
 			
 			System.out.println(prop.getProperty("YserName", "TestDefault"));
+			System.out.println("password");
 			
 			
 		} catch (FileNotFoundException e) {
