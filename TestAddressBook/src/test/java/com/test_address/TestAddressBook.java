@@ -9,11 +9,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.test.addressbook.Title;;
+import com.test.addressbook.AddAddressBook;
+import com.test.addressbook.Title;
+import com.test.addressbook.editAddress;;
 
 public class TestAddressBook {
 
-	WebDriver driver;
+	public WebDriver driver;
+	
+	//AddAddressBook address;
 
 	@BeforeClass
 	public void doBefore() {
@@ -22,18 +26,40 @@ public class TestAddressBook {
 
 		driver = new ChromeDriver();
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("http:\\a.testaddressbook.com");
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 	}
 
 	@Test
 	public void test() {
-
 		Assert.assertEquals("Address Book", new Title().validateTitle(driver));
+		
+	}
+	
+	@Test
+	
+	public void addAddress() {	
+		
+		AddAddressBook address;
+		address=new AddAddressBook(driver);	
+		address.addAddress(1);		
+	}
+	
+	@Test 
+	
+	public void editadd() {
+		editAddress editadd1;
+		editadd1 = new editAddress(driver);
+		editadd1.editAdd(1);
+		
+		
 	}
 
 	@AfterClass
 
 	public void doAfter() {
-		System.out.print("testing done");//driver.quit();
+		//driver.quit();
 	}
 }
