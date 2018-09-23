@@ -4,7 +4,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
+/**
+ *  this is prg to fetch properties file detail
+ * @author Sathish
+ *
+ */
 public class TestContext {
 	
 	public static void main(String[] args) {

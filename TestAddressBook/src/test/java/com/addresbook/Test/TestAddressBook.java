@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 
 import com.test.addressbook.AddAddressBook;
 import com.test.addressbook.Title;
-import com.test.addressbook.editAddress;;
+import com.test.addressbook.editAddress;
+
 
 public class TestAddressBook {
 
@@ -38,13 +39,11 @@ public class TestAddressBook {
 		
 	}
 	
-	@Test
+	@Test (enabled=true)
 	
 	public void addAddress() {	
+		Assert.assertEquals(true, new AddAddressBook(driver).addAddress());
 		
-		AddAddressBook address;
-		address=new AddAddressBook(driver);	
-		address.addAddress(1);		
 	}
 	
 	@Test 
@@ -60,6 +59,6 @@ public class TestAddressBook {
 	@AfterClass
 
 	public void doAfter() {
-		//driver.quit();
+		driver.quit();
 	}
 }
